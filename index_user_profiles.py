@@ -35,7 +35,7 @@ else:
         sys.exit('ERROR: Default users.txt not found. No alternate topic file  was provided')
 
 
-USERS = [user.replace('\n', '').strip().replace('@', '') for user in users]
+USERS = [user.replace('\n', '').strip() for user in users]
 
 def retrieve_user_data():
     try:
@@ -69,7 +69,8 @@ def get_time_stamp():
 def get_twitter_users_pipeline():
     time_stamp = get_time_stamp()
     user_data = retrieve_user_data()
-    mapped_user_data = map_user_for_es(user_data, time_stamp)
-    dump_to_elastic(mapped_user_data)
+    for user in user_data:
+        mapped_user_data = map_user_for_es(user_data, time_stamp)
+        dump_to_elastic(mapped_user_data)
 
 get_twitter_users_pipeline()
