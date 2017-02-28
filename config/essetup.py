@@ -35,6 +35,20 @@ settings = {
                 'original_id': {'type': 'string'},
                 'original_name': {'type': 'string'}
             }
+        },
+        'users': {
+            'id': {'type': 'long'},
+            'name': {'type': 'string'},
+            'screen_name': {'type': 'string'},
+            'followers_count': {'type': 'long'},
+            'friends_count': {'type': 'long'},
+            'location': {'type': 'string'},
+            'description': {'type': 'string'},
+            'favorites_count': {'type': 'long'},
+            'statuses_count': {'type': 'long'},
+            'listed_count': {'type': 'long'},
+            'profile_background_image_url': {'type': 'string'},
+            'profile_image_url': {'type': 'string'}
         }
     }
 }
