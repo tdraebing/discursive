@@ -23,21 +23,31 @@ Once you have cloned the repo you're ready to rock:
 
 2. Change into the Discursive directory (i.e. `cd discursive/`).
 
-3. Run `essetup.py` which is located in the `/config` directory, which'll generate the Elasticsearch index with the appropriate mappings.
+3. If not installed yet on your EC2 instance, install pip. For Ubuntu: `sudo apt-get install python2-pip`
 
-4. Update the `aws_config.py` `twitter_config.py` `esconn.py` and `s3conn.py` files located in the `/config` directory with your credentials.
+4. Install requirements by running `pip2 install -r requirements.txt`
 
-5. Put your desired keyword(s) in the `topics.txt` file (one term per line).
+5. Update the `aws_config.py` `twitter_config.py` `esconn.py` and `s3conn.py` files located in the `/config` directory with your credentials.
 
-6. Edit the `crontab` file to run at your desired intervals. The default will run every fifteen minutes. 
+6. Run `essetup.py` which is located in the `/config` directory, which'll generate the Elasticsearch index with the appropriate mappings.
 
-7. Run `sudo docker build -t discursive .`
+7. Put your desired keyword(s) in the `topics.txt` file (one term per line).
 
-8. Run `sudo docker run discursive`
+8. Edit the `crontab` file to run at your desired intervals. The default will run every fifteen minutes. 
 
-9. If all went well you're watching Tweets stream into your Elasticsearch index! Conversely, run `index_twitter_search.py` to search for specific topic(s) and bulk insert the data into your Elasticsearch index (and see the messages from Elasticsearch returned to your console).
+9. Run `sudo docker build -t discursive .`
 
-10. There are several options you may want to configure/tweak. For instance, you may want to turn off printing to console (which you can do in `index_twitter_search.py`) or run the container as a detached process. Please do jump into our Slack channel #assemble if you have any questions or log an issue!
+10. Run `sudo docker run discursive`
+
+11. If all went well you're watching Tweets stream into your Elasticsearch index! Conversely, run `index_twitter_search.py` to search for specific topic(s) and bulk insert the data into your Elasticsearch index (and see the messages from Elasticsearch returned to your console).
+
+12. There are several options you may want to configure/tweak. For instance, you may want to turn off printing to console (which you can do in `index_twitter_search.py`) or run the container as a detached process. Please do jump into our Slack channel #assemble if you have any questions or log an issue!
+
+## Configuring discursive for AWS
+
+### aws_config.py
+
+1. If you not already have done so, (create a IAM)[] user for programmatic access.
 
 ## Explore Twitter networks
 
