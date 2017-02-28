@@ -44,7 +44,7 @@ settings = {
             'friends_count': {'type': 'long'},
             'location': {'type': 'string'},
             'description': {'type': 'string'},
-            'favorites_count': {'type': 'long'},
+            'favourites_count': {'type': 'long'},
             'statuses_count': {'type': 'long'},
             'listed_count': {'type': 'long'},
             'profile_background_image_url': {'type': 'string'},

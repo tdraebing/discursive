@@ -53,7 +53,7 @@ def map_user_for_es(user, time_stamp):
         'friends_count': user.friends_count,
         'location': user.location,
         'description': user.description,
-        'favorites_count': user.favorites_count,
+        'favourites_count': user.favourites_count,
         'statuses_count': user.statuses_count,
         'listed_count': user.listed_count,
         'profile_background_image_url': user.profile_background_image_url,
@@ -70,7 +70,7 @@ def get_twitter_users_pipeline():
     time_stamp = get_time_stamp()
     user_data = retrieve_user_data()
     for user in user_data:
-        mapped_user_data = map_user_for_es(user_data, time_stamp)
+        mapped_user_data = map_user_for_es(user, time_stamp)
         dump_to_elastic(mapped_user_data)
 
 get_twitter_users_pipeline()
